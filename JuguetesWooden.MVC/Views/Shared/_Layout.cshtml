@@ -3,43 +3,168 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - JuguetesWooden.MVC</title>
+    <title>@ViewData["Title"]JuguetesWooden</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
+<!-- Header -->
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">JuguetesWooden.MVC</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                
+        <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow">
+    
+            <div class="container d-flex justify-content-between align-items-center">
+                <a class="navbar-brand h1" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/img/wooden-logo.png" alt="Logo Wooden">
+                </a>
+    			
+    <!-- Boton de hamburguesa --> 
+      	        <button class="navbar-toggler border-0 text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    				<span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+    <!-- Opciones del Menu -->
+    		    <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="navbar-toggler-success">
+      		        <div class="flex-fill mx-xl-5 mb-2">
+     	                <ul class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
+                            <li class="nav-item">
+                                <a class="nav-link btn-outline-primary rounded px-3" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn-outline-primary rounded px-3" asp-area="" asp-controller="Home" asp-action="About">Sobre Nosotros</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn-outline-primary rounded px-3" asp-area="" asp-controller="Home" asp-action="Store">Tienda</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn-outline-primary rounded px-3" asp-area="" asp-controller="Home" asp-action="Contact">Contáctanos</a>
+                            </li>
+                        </ul>
+                    </div>
+    
+    <!-- Fin de las opciones del menu
+    ---- Inicio de los iconos del menu-->
+                    <div class="navbar align-self-center d-flex align-items-center">
+                        <a class="nav-link" asp-controller="Carrito" asp-action="Index"><i class='bx bx-md bx-cart bx-tada-hover text-primary'></i></a>
+                        <a class="nav-link" asp-controller="Login" asp-action="Login"><i class='bx bx-md bx-key bx-tada-hover text-primary'></i></a>
+                    </div>
                 </div>
             </div>
         </nav>
+    <!-- Fin de los iconos del menu -->
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+<!-- Fin Header -->
 
-    <footer class="border-top footer text-muted">
+    @RenderBody()
+
+<!-- Footer -->
+    <footer class="bg-secondary pt-4">
         <div class="container">
-            &copy; 2022 - JuguetesWooden.MVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="row py-4">
+
+                <div class="col-lg-3 col-12 align-left">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="~/img/wooden-logof.png" alt="Logo Wooden">
+                    </a>
+                    <ul class="list-inline footer-icons light-300">
+                        <li class="list-inline-item m-0">
+                            <a class="text-light" target="_blank" href="https://www.facebook.com/jugueteswooden">
+                                <i class='bx-gus bx bxl-facebook-circle bx-tada-hover text-dark'></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item m-0">
+                            <a class="text-light" target="_blank" href="https://www.instagram.com/jugueteswooden/?hl=es-la">
+                                <i class='bx-gus bx bxl-instagram bx-tada-hover text-dark'></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item m-0">
+                            <a class="text-light" target="_blank" href="https://wa.link/bzt3j0">
+                                <i class='bx-gus bx bxl-whatsapp bx-tada-hover text-dark'></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-4 my-sm-0 mt-4">
+                    <h2 class="h4 pb-lg-3 text-light light-300">Nuestro Taller</h2>
+                        <ul class="list-unstyled text-light light-300">
+                            <li class="pb-2">
+                                <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light" 
+                                asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="pb-2">
+                                <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light py-1" 
+                                asp-area="" asp-controller="Home" asp-action="About">Nosotros</a>
+                            </li>
+                            <li class="pb-2">
+                                <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light py-1" 
+                                asp-area="" asp-controller="Home" asp-action="Store">Tienda</a>
+                            </li>
+                            <li class="pb-2">
+                                <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light py-1" 
+                                asp-area="" asp-controller="Home" asp-action="Contact">Contáctanos</a>
+                            </li>
+                        </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-4 my-sm-0 mt-4">
+                    <h2 class="h4 pb-lg-3 text-light light-300">Productos</h2>
+                    <ul class="list-unstyled text-light light-300">
+                        <li class="pb-2">
+                            <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light py-1" 
+                            asp-controller="Home" asp-action="Store">Didácticos</a>
+                        </li>
+                        <li class="pb-2">
+                            <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light py-1" 
+                            asp-controller="Home" asp-action="Store">De Mesa</a>
+                        </li>
+                        <li class="pb-2">
+                            <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light py-1" 
+                            asp-controller="Home" asp-action="Store">Vehículos</a>
+                        </li>
+                        <li class="pb-2">
+                            <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light py-1" 
+                            asp-controller="Home" asp-action="Store">Ingenio</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-4 my-sm-0 mt-4">
+                    <h2 class="h4 pb-lg-3 text-light light-300">Atendemos en:</h2>
+                    <ul class="list-unstyled text-light light-300">
+                        <li class="pb-2">
+                            <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-light py-1" 
+                            href="tel:381-353-0079">381-353-0079</a>
+                        </li>
+                        <li class="pb-2">
+                            <i class='bx-fw bx bx-mail-send bx-xs'></i><a class="text-decoration-none text-light py-1"
+                            href="mailto:jugueteswooden@gmail.com">jugueteswooden@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
         </div>
+
+        <div class="w-100 bg-primary py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-lg-6 col-sm-12">
+                        <p class="text-lg-start text-center text-light light-300">
+                            © Copyright 2021 Juguetes Wooden. Todos los derechos reservados.
+                        </p>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <p class="text-lg-end text-center text-light light-300">
+                            Diseñado por <a rel="sponsored" class="text-decoration-none text-light" 
+                            href="https://www.linkedin.com/in/gus-cardozo/" target="_blank"><strong>Gustavo A. Cardozo</strong></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </footer>
+    <!-- Fin Footer -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

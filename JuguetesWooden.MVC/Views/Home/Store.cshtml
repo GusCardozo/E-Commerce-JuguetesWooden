@@ -1,0 +1,48 @@
+﻿@* List<JuguetesWooden.Models.Juguetes> *@
+@model JuguetesWooden.Models.DetalleCompra
+@{
+    List<JuguetesWooden.Models.Juguete> juguetes = ViewData["Juguetes"] as List<JuguetesWooden.Models.Juguete>;
+}
+
+<!-- Empieza Nuestro Trabajo -->
+<section class="container py-5">
+    <div class="row justify-content-center my-5">
+        <div class="filter-btns shadow-md rounded-pill text-center col-auto">
+            <a class="filter-btn btn rounded text-dark btn-outline-primary border-0 m-md-2 px-md-4 active" data-filter=".project" href="#">Todos</a>
+            <a class="filter-btn btn rounded text-dark btn-outline-primary border-0 m-md-2 px-md-4" data-filter=".didacticos" href="#">Didácticos</a>
+            <a class="filter-btn btn rounded text-dark btn-outline-primary border-0 m-md-2 px-md-4" data-filter=".mesa" href="#">De Mesa</a>
+            <a class="filter-btn btn rounded text-dark btn-outline-primary border-0 m-md-2 px-md-4" data-filter=".vehiculos" href="#">Vehículos</a>
+            <a class="filter-btn btn rounded text-dark btn-outline-primary border-0 m-md-2 px-md-4" data-filter=".ingenio" href="#">Ingenio</a>
+        </div>
+    </div>
+    <div class="row projects gx-lg-5">
+        @foreach (var item in juguetes)
+        {
+            <div class="col-sm-6 col-lg-4 text-decoration-none project @item.Categoria.Nombre">
+                <div class="service-work overflow-hidden card mb-5 mx-5 m-sm-0">
+                    <img class="card-img-top" src="@item.Foto">
+                    <div class="card-body">
+                        <h5 class="card-title semi-bold-600 text-dark">@item.Nombre</h5>
+                        <p class="card-text light-300 text-dark">
+                            @item.Detalle
+                        </p>
+                        <p class="semi-bold-600 text-primary">
+                           $@item.Precio
+                        </p>
+                        <form asp-controller="Carrito" asp-action="Agregar" class="align-items-center">
+                            <input type="hidden" asp-for="IdJuguete" value="@item.Id">
+                            <label asp-for="Cantidad" class="text-primary ml-2 light-300">Cantidad</label>
+                            <input type="number" asp-for="Cantidad" min="1" value="1" style="width: 40px;">
+                            <button type="submit" 
+                                class="btn btn-secondary rounded px-md-5 px-4 py-2 mb-3 mt-3 radius-0 text-dark">
+                                Agregar al carrito
+                                <i class='bx bxs-cart ms-1'></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+<!-- Fin Nuestro Trabajo -->
